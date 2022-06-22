@@ -2,14 +2,17 @@
   <div id="app">
     <Navbar/>
     <router-view/>
+    <Footer_inf/>
   </div>
 </template>
 
 <script>
 import Navbar from '../src/components/Navbar.vue'
+import Footer_inf from './components/Footer_inf.vue'
 export default{
   components:{
-    Navbar
+    Navbar,
+    Footer_inf
   }
 }
 </script>
@@ -28,6 +31,5 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
 }
 </style>
