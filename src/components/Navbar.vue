@@ -22,12 +22,6 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/about">About</router-link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
           </ul>
         </div>
       </div>
@@ -40,5 +34,5 @@ export default {};
 </script>
 
 <style scoped>
-    
+
 </style>
