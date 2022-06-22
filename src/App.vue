@@ -15,24 +15,19 @@ export default{
 </script>
 
 <style>
+@font-face {
+  font-family: "Lora";
+  src: local("Lora"), url(./fonts/Lora/Lora-Italic-VariableFont_wght.ttf) format("truetype");
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font-family: "Lora";
 }
+body{
+  background: url(./assets/Caraturlas/BackgroundYugi.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>

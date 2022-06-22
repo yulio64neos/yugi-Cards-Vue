@@ -2,7 +2,9 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" to="/">
+            <img src="../assets/Caraturlas/Yu-Gi-Oh__LogoFinal.png" alt="" width="100px">
+        </a>
         <button
           class="navbar-toggler"
           type="button"
