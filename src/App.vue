@@ -26,10 +26,10 @@ export default{
   font-family: "Lora";
 }
 body{
-  background: url(./assets/Caraturlas/BackgroundYugi.jpg) no-repeat center center fixed;
+  /* background: url(./assets/Caraturlas/BackgroundYugi.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
 }
 </style>
