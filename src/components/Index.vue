@@ -45,89 +45,22 @@
       </div>
     </section>
     <section class="trio">
-      <swiper
-        :slides-per-view="3"
-        :space-between="30"
-        :loop="false"
-        @swiper="onSwiper"
-        @slideChange="onSlideChange"
-      >
-        <swiper-slide
-          v-for="n in 5"
-          :key="n"
-          class="test"
-          :class="{ test_2: true }"
-        >
-          <div>{{ 29 + n }}</div>
-          <img
-            :src="getImageUrl(29 + n)"
-            width="600"
-            height="400"
-            class="img-fluid w-100 mx-auto"
-            blank="true"
-          />
-        </swiper-slide>
-      </swiper>
-      <swiper
-        :slides-per-view="3"
-        :space-between="30"
-        loop
-        @swiper="onSwiper"
-        @slideChange="onSlideChange"
-      >
-        <swiper-slide
-          v-for="n in 5"
-          :key="n"
-          class="test"
-          :class="{ test_2: true }"
-        >
-          <div>{{ 34 + n }}</div>
-          <img
-            :src="getImageUrl(34 + n)"
-            width="600"
-            height="400"
-            class="img-fluid w-100 mx-auto"
-            blank="true"
-          />
-        </swiper-slide>
-      </swiper>
-
-      <h2>pagination - navigation</h2>
-      <swiper
-        :slides-per-view="3"
-        :space-between="30"
-        :loop="false"
-        :pagination="true"
-        :navigation="true"
-        @swiper="onSwiper"
-        @slideChange="onSlideChange"
-      >
-        <swiper-slide
-          v-for="n in 5"
-          :key="n"
-          class="test"
-          :class="{ test_2: true }"
-        >
-          <div>{{ 34 + n }}</div>
-          <img
-            :src="getImageUrl(34 + n)"
-            width="600"
-            height="400"
-            class="img-fluid w-100 mx-auto"
-            blank="true"
-          />
-        </swiper-slide>
-      </swiper>
+      <carousel-3d>
+        <slide v-for="(img, i) in images" :index="i">
+          <img :src="img.picture" class="img-fluid" />
+        </slide>
+      </carousel-3d>
     </section>
   </div>
 </template>
 
 <script>
-import { Navigation, Pagination } from "swiper";
-import { SwiperCore, Swiper, SwiperSlide } from "swiper-vue2";
-import "swiper/swiper-bundle.css";
-SwiperCore.use([Navigation, Pagination]);
+import { Carousel3d, Slide } from "vue-carousel-3d";
 export default {
+  components: {
+    Carousel3d,
+    Slide,
+  },
   data() {
     return {
       //Imagenes
@@ -136,24 +69,25 @@ export default {
       imgCartas: require("@/assets/Caraturlas/cartas.png"),
       imgYugis: require("@/assets/Caraturlas/trio_yugi.png"),
       imgTea: require("@/assets/Caraturlas/Tea.png"),
+
+      //Slides
+      slides: 7,
+      //Imagenes
+      images:[
+        {
+          picture : require("@/assets/Caraturlas/bannerYugi.jpg")
+        },
+        {
+          picture : require("@/assets/Caraturlas/aniversario.jpg")
+        },
+        {
+          picture : require("@/assets/Caraturlas/yugi-kaiba.jpg")
+        },
+      ]
     };
   },
 
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  methods: {
-    getImageUrl(imageId) {
-      return `https://picsum.photos/600/400/?image=${imageId}`;
-    },
-    onSwiper(swiper) {
-      console.log(swiper);
-    },
-    onSlideChange() {
-      console.log("slide change");
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -170,21 +104,5 @@ export default {
 .cartas {
   width: 100px;
   margin-top: 20px;
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-.w-100 {
-  width: 100%;
-}
-.ml-auto,
-.mx-auto {
-  margin-left: auto;
-}
-.mr-auto,
-.mx-auto {
-  margin-right: auto;
 }
 </style>
