@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Carousel3d from 'vue-carousel-3d';
+import VueQRCodeComponent from 'vue-qr-generator'
+Vue.component('qr-code', VueQRCodeComponent)
 
 Vue.use(VueAxios, axios, Carousel3d)
 Vue.config.productionTip = false
